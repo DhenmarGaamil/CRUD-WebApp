@@ -1,0 +1,46 @@
+﻿<h1>MANAGE SUBJECT PAGE</h1>
+
+<main>
+    <div class="container-fluid px-4">
+        <a class="btn btn-primary m-2" asp-controller="Subject" asp-action="Add">ADD SUBJECT</a>
+
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+              LIST OF SUBJECT TAKEN 
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>SUBJECT ID</th>
+                            <th>DISCRIPTIVE TITLE</th>
+                            <th>CLASS SECTION</th>
+                            <th>TEACHER</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var subject in Model)
+                        { 
+                            <tr>
+                                <td>@subject.Id</td>
+                                <td>@subject.DiscriptiveTitle</td>
+                                <td>@subject.ClassSection</td>
+                                <td>@subject.Teacher</td>
+                                <td>
+                                <a class="btn btn-primary btn-sm" asp-action="Update" asp-controller="Subject" asp-route-Id="@subject.Id">Edit</a>
+                                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-controller="Subject" asp-route-Id="@subject.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</main>

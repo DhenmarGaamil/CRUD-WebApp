@@ -1,0 +1,24 @@
+﻿@model Subject
+<h1>UPDATE SUBJECT RECORD</h1>
+<form method="post" action="Update">
+
+    <div class="form-group m-2">
+        <label for="exampleInputEmail1">DISCRIPTIVE TITLE</label>
+        <input asp-for="DiscriptiveTitle" type="text" class="form-control" id="exampleInputEmail1">
+        <span asp-validation-for="DiscriptiveTitle" class="text-danger"></span>
+    </div>
+
+    <div class="form-group m-2">
+        <label for="exampleInputEmail1">CLASS SECTION</label>
+        <input asp-for="ClassSection" type="text" class="form-control" id="exampleInputEmail1">
+        <span asp-validation-for="ClassSection" class="text-danger"></span>
+    </div>
+
+    <div class="form-group m-2">
+        <label for="exampleInputEmail1">TEACHER</label>
+        <input asp-for="Teacher" type="text" class="form-control" id="exampleInputEmail1">
+        <span asp-validation-for="Teacher" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary m-2" asp-action="Update" asp-controller="Subject">Update Subject</button>
+</form>
